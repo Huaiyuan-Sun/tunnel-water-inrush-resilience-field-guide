@@ -1,0 +1,48 @@
+{
+  "incident_id": "DEMO-K12+340-20260728-01",
+  "evidence_version": "EVID-v3",
+  "recovery": {
+    "stages": {
+      "A": [0.08, 0.12],
+      "B": [0.55, 0.75],
+      "C": [0.4, 0.6],
+      "D": [1.5, 1.8]
+    }
+  },
+  "vulnerability": {
+    "affected_workers": [12, 12],
+    "LP1": [0, 0],
+    "LP2": [0, 1],
+    "LP3": [1, 3],
+    "LC1": [80, 120],
+    "LC2": [40, 80],
+    "LC3": [20, 50],
+    "LC4": [120, 200],
+    "environmental_levels": [2, 3]
+  },
+  "evaluators": [
+    {
+      "id": "ENG-01",
+      "time": 2.4,
+      "loss": 1.8,
+      "ci": 3
+    },
+    {
+      "id": "LLM-01",
+      "time": 2.8,
+      "loss": 2.1,
+      "ci": 2
+    },
+    {
+      "id": "LLM-02",
+      "time": 3.1,
+      "loss": 2.4,
+      "ci": 1
+    }
+  ],
+  "cloud": {
+    "droplets": 5000,
+    "seed": 42
+  }
+}
+

@@ -1,0 +1,2 @@
+action_id,incident_id,resilience_level,dominant_weakness,trigger,measure,owner,due_date,required_resource,acceptance_evidence,status,residual_risk,reassessment_required,closed_at,approved_by
+,,,,,,,,,,Open,,Yes,,
