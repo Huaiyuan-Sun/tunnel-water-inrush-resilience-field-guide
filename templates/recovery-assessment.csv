@@ -1,0 +1,6 @@
+incident_id,assessment_version,evaluator_id,stage,activity,lower_months,upper_months,representative_months,evidence_ids,assumption_ids,dependency,parallel_with,gross_or_net,controlling,confidence,notes
+,,,A,Emergency response and risk elimination,,,,,,,None,Net,No,,
+,,,B,Drainage and mud/debris removal,,,,,,,None,Net,No,,
+,,,C,Equipment and system recovery,,,,,,,None,Net,No,,
+,,,D,Construction restoration and resumption,,,,,,,None,Net,No,,
+

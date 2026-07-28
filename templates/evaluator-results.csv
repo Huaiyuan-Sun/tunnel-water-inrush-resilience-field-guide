@@ -1,0 +1,3 @@
+incident_id,evidence_version,evaluator_id,evaluator_type,ci,time_lower_months,time_upper_months,time_representative_months,time_level_low,time_level_high,loss_lower,loss_upper,loss_representative,loss_level_low,loss_level_high,confidence,validation_status,assumption_ids,submitted_at
+,,,,,,,,,,,,,,,,,,
+
