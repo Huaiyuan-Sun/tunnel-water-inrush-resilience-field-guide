@@ -1,8 +1,10 @@
+# Python缓存 / Python caches
 __pycache__/
 *.py[cod]
 .pytest_cache/
+# 操作系统生成文件 / Operating-system files
 .DS_Store
 Thumbs.db
+# 本地输出和真实事件资料 / Local outputs and real incident data
 output/
 local-events/
-

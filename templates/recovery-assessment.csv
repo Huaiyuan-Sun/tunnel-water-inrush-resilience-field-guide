@@ -1,6 +1,6 @@
 incident_id,assessment_version,evaluator_id,stage,activity,lower_months,upper_months,representative_months,evidence_ids,assumption_ids,dependency,parallel_with,gross_or_net,controlling,confidence,notes
+事件编号 / Incident ID,评估版本 / Assessment version,评估者编号 / Evaluator ID,阶段 / Stage,活动 / Activity,下界（月） / Lower months,上界（月） / Upper months,代表值（月） / Representative months,证据编号 / Evidence IDs,假设编号 / Assumption IDs,依赖关系 / Dependency,并行活动 / Parallel with,毛或净 / Gross or net,是否控制 / Controlling,置信度 / Confidence,备注 / Notes
 ,,,A,Emergency response and risk elimination,,,,,,,None,Net,No,,
 ,,,B,Drainage and mud/debris removal,,,,,,,None,Net,No,,
 ,,,C,Equipment and system recovery,,,,,,,None,Net,No,,
 ,,,D,Construction restoration and resumption,,,,,,,None,Net,No,,
-

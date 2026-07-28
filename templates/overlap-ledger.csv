@@ -1,3 +1,3 @@
 incident_id,assessment_version,evaluator_id,activity,gross_lower_months,gross_upper_months,predecessor,parallel_with,overlap_treatment,net_stage,net_lower_months,net_upper_months,evidence_or_assumption_ids,notes
+事件编号 / Incident ID,评估版本 / Assessment version,评估者编号 / Evaluator ID,活动 / Activity,毛时长下界（月） / Gross lower months,毛时长上界（月） / Gross upper months,前置活动 / Predecessor,并行活动 / Parallel with,重叠处理 / Overlap treatment,计入阶段 / Net stage,净时长下界（月） / Net lower months,净时长上界（月） / Net upper months,证据或假设编号 / Evidence or assumption IDs,备注 / Notes
 ,,,,,,,,,A,,,,
-

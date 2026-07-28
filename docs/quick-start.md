@@ -80,3 +80,83 @@
 3. 不重复计算并行工期或经济损失。
 4. 不让自动结果越过安全负责人和评估负责人的审批。
 
+## 立即升级的五种情况
+
+- 持续流量达到或超过有效排水能力；
+- 人员状态、坍塌范围或有害气体状态仍不明确；
+- Time/Loss主导项无法形成工程上下界；
+- 强制校验失败或专家与模型相差两级及以上；
+- 结果将用于复工、重大资源调配或对外信息发布。
+
+交接时必须口头复述并书面记录：安全门、证据版本、主导假设、未关闭校验、当前关键路径、下一更新时间和责任人。
+
+---
+
+<a id="english-version"></a>
+
+# Post-Incident Quick-Start Card
+
+Audience: incident command, chief engineer, safety lead, and assessment recorder.
+
+## First 0-15 minutes: safety and facts only
+
+### Safety gate
+
+If any item is not confirmed, suspend quantitative resilience assessment and continue the emergency plan:
+
+- [ ] Personnel have left the hazardous area and rescue status is confirmed.
+- [ ] Access and data collection will not increase exposure.
+- [ ] Power, ventilation, communications, drainage, and support are confirmed or isolated.
+- [ ] Continuing inflow, mud, collapse, rock burst, gas, and other secondary hazards are monitored and controlled.
+- [ ] The incident commander has authorized assessment start.
+
+Create an incident ID:
+
+```text
+project-worksite/chainage-YYYYMMDD-sequence
+```
+
+Use the same incident ID and version on photographs, monitoring data, minutes, calculation files, and reports.
+
+Register only observed or formally reported facts: time and location, work activity, personnel and evacuation status, inflow and sediment, collapse and support damage, utilities and access, available pumps and transport, discharge pathway and receptors, source, timestamp, and owner. Assign a unique evidence ID in [`../templates/evidence-register.csv`](../templates/evidence-register.csv).
+
+## 15-60 minutes: establish initial bounds
+
+1. Mark every input `Observed`, `Derived`, `Assumed`, or `Unknown`.
+2. List missing items and the Time/Loss components they affect.
+3. Retrieve relevant knowledge-graph rules, cases, and actions without treating them as field facts.
+4. Recovery and vulnerability assessors independently build initial intervals.
+5. Set a controlling component to `Not assessable` when no defensible bound exists.
+
+## 1-4 hours: first auditable assessment
+
+- Complete the recovery, overlap, and vulnerability forms.
+- Obtain at least two independent assessments from the same evidence snapshot.
+- Run mandatory validations and the two-dimensional cloud model.
+- Record boundary crossings, failures, confidence, and the nearest/second-nearest feature points.
+- The assessment lead issues only an `Assessable` or `Provisional` result that has passed the required review.
+
+## Update cadence
+
+| Time | Minimum output |
+| --- | --- |
+| T+15 min | Incident ID, safety gate, initial evidence |
+| T+1 h | Missing data and initial Time/Loss bounds |
+| T+4 h | First structured assessment and action plan |
+| T+8 h | Updated monitoring, inspection, price, and environment data |
+| T+24 h | Formally reviewed version |
+| Daily | Critical path, continuing inflow, costs, and action status |
+| Material change | Immediate new version; never overwrite the old one |
+
+## Four red lines
+
+1. Never disguise an unknown as a precise point.
+2. Never present a similar case as a project fact.
+3. Never double-count parallel duration or loss.
+4. Never let an automated result bypass safety and assessment approval.
+
+## Immediate escalation
+
+Escalate when continuing inflow meets or exceeds effective drainage; personnel or secondary-hazard status is unresolved; a controlling Time/Loss component cannot be bounded; mandatory validation fails; expert and model levels differ by two or more bands; or the result will control restart, major resources, or public release.
+
+At handover, repeat and record the safety status, evidence version, controlling assumptions, open validations, critical path, next update, and responsible person.

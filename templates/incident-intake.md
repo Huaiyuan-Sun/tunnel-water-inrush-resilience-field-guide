@@ -43,3 +43,67 @@
 - 现场指挥人：
 - 时间：
 
+## 待核实与下一次更新
+
+- 控制性缺失信息：
+- 获取责任人：
+- 预计获取时间：
+- 下一次更新时点：
+- 当前评估状态：`Suspended / Provisional`
+
+---
+
+<a id="english-version"></a>
+
+# Incident Intake Form
+
+## Basic information
+
+- Incident ID:
+- Project/contract:
+- Worksite/chainage:
+- Event time:
+- Assessment start time:
+- Current version:
+- Incident commander:
+- Assessment lead:
+- Data recorder:
+
+## Safety gate
+
+- [ ] Personnel have left the hazardous area and rescue status is confirmed.
+- [ ] Data collection will not increase personnel exposure.
+- [ ] Power, ventilation, communications, drainage, and support are confirmed or isolated.
+- [ ] Continuing inflow, mud, collapse, and other secondary hazards are controlled and monitored.
+- [ ] The incident commander authorizes quantitative assessment.
+
+Safety-gate result: `Pass / Fail`
+
+Failed item and current control:
+
+## Initial facts
+
+- Event summary:
+- Current construction activity:
+- Affected area:
+- Personnel status:
+- Water/mud status:
+- Collapse/entrapment:
+- Power/ventilation/communications:
+- Drainage and transport:
+- Environmental discharge:
+- Controls already started:
+
+## Verification and next update
+
+- Controlling missing information:
+- Owner:
+- Expected availability:
+- Next update:
+- Current assessment status: `Suspended / Provisional`
+
+## Sign-off
+
+- Safety/rescue lead:
+- Incident commander:
+- Time:

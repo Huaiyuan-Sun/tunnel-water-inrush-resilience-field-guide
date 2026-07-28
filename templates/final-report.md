@@ -89,3 +89,122 @@
 - 现场指挥人：
 - 签发时间：
 
+## 10. 复评与关闭
+
+- 下一复评时间/触发条件：
+- 未完成行动：
+- 残余风险：
+- 关闭状态：`Open / Conditional / Closed`
+- 关闭批准人及时间：
+- 审计包路径：
+
+---
+
+<a id="english-version"></a>
+
+# Tunnel Water-Inrush Resilience Assessment Report
+
+## 1. Report control
+
+- Incident ID:
+- Evidence version:
+- Assessment version:
+- Status: `Assessable / Provisional / Not assessable / Suspended`
+- Cut-off time:
+- Assessment lead:
+
+> Open mandatory validation failures:
+
+## 2. Event and safety status
+
+- Event summary:
+- Current personnel and secondary-hazard status:
+- Safety gate:
+- Matters outside this assessment:
+
+## 3. Evidence and missing information
+
+- Decision-critical evidence:
+- Missing items:
+- Assumptions:
+- Knowledge-retrieval status and nodes:
+- Conflicting evidence and treatment:
+
+## 4. Recovery time
+
+- Stage A (months):
+- Stage B (months):
+- Stage C (months):
+- Stage D (months):
+- Critical path and overlap treatment:
+- Time interval (months):
+- Representative Time:
+- Time level/range:
+- 24-month model truncation:
+- Confidence:
+- Controlling stage and sensitivity:
+
+## 5. Vulnerability
+
+- LP1/LP2/LP3:
+- LC1/LC2/LC3/LC4 (CNY 10,000):
+- Environmental level and LE:
+- Loss interval:
+- Representative Loss:
+- Loss level/range:
+- Outside reference domain:
+- Confidence:
+- Dominant contribution and sensitivity:
+
+## 6. Multiple evaluators and CI
+
+- Evaluators:
+- Evidence snapshot:
+- CI basis:
+- Main disagreements:
+- Pre-consensus results retained at:
+- Review treatment:
+
+## 7. Two-dimensional cloud model
+
+- Ex/Ey:
+- Enx/Eny:
+- Hex/Hey:
+- Random seed:
+- Droplet count:
+- Code commit:
+- Nearest feature point/distance:
+- Second-nearest feature point/distance:
+- Distance margin:
+- Integrated resilience level:
+- Boundary sensitivity:
+
+## 8. Conclusion and actions
+
+- Dominant weakness:
+- Integrated conclusion:
+- Immediate actions:
+- Short-term actions:
+- Medium/long-term actions:
+- Action owners and acceptance evidence:
+- Next reassessment trigger/time:
+
+## 9. Validation and approval
+
+- Mandatory validation result:
+- Approved deviations:
+- Recovery assessor:
+- Vulnerability assessor:
+- Independent reviewer:
+- Assessment lead:
+- Incident commander:
+- Issue time:
+
+## 10. Reassessment and closure
+
+- Next reassessment time/trigger:
+- Open actions:
+- Residual risk:
+- Closure status: `Open / Conditional / Closed`
+- Closure approver/time:
+- Audit-package path:

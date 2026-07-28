@@ -1,4 +1,6 @@
 {
+  "_说明_zh": "匿名演示输入；所有区间为[下界,上界]，A-D单位为月，LC单位为万元人民币。",
+  "_note_en": "Anonymized demonstration input; intervals are [lower, upper], A-D use months, and LC uses CNY 10,000.",
   "incident_id": "DEMO-K12+340-20260728-01",
   "evidence_version": "EVID-v3",
   "recovery": {
@@ -45,4 +47,3 @@
     "seed": 42
   }
 }
-

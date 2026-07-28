@@ -11,3 +11,19 @@
 
 在修复和复核完成前，应暂停使用受影响功能，并采用人工复核或项目批准的备用方法。不得依赖本仓库处理紧急搜救、撤离或其他生命安全命令。
 
+---
+
+<a id="english-version"></a>
+
+# Security Reporting
+
+If the calculator may misclassify a result, mishandle a boundary, confuse units, bypass a mandatory constraint, or otherwise affect an engineering decision, do not attach real incident information to a public issue.
+
+A public report should contain only:
+
+- a minimal anonymized input;
+- expected and actual output;
+- code version, Python version, seed, and droplet count;
+- potential field impact.
+
+Until correction and qualified review are complete, suspend the affected function and use human review or an approved fallback. Never rely on this repository for emergency rescue, evacuation, or other life-safety commands.

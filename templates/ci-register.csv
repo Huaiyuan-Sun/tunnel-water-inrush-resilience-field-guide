@@ -1,3 +1,3 @@
 evaluator_id,evaluator_type,approved_ci,approval_basis,task_scope,approved_by,approved_at,effective_version,last_validation_case,rule_compliance_rate,notes
+评估者编号 / Evaluator ID,评估者类型 / Evaluator type,批准CI / Approved CI,批准依据 / Approval basis,任务范围 / Task scope,批准人 / Approved by,批准时间 / Approved at,生效版本 / Effective version,最近验证案例 / Last validation case,规则符合率 / Rule compliance rate,备注 / Notes
 ,,,,,,,,,,
-

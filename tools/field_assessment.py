@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Field calculator for tunnel water-inrush resilience assessment.
+"""隧道突涌水韧性评估现场计算器。
+
+本脚本仅使用 Python 标准库，用于校验结构化输入、计算恢复时间与脆弱性
+区间、生成 CI 加权二维云，并检索现场指南所定义的25个韧性特征点。
+它是工程决策支持工具，不是应急指挥、撤离、救援或复工批准系统。
+
+Field calculator for tunnel water-inrush resilience assessment.
 
 The script uses only the Python standard library. It validates the structured
 input, calculates recovery-time and vulnerability intervals, builds a
@@ -42,7 +48,7 @@ EPSILON = 1e-12
 
 
 class AssessmentInputError(ValueError):
-    """Raised when an input violates a mandatory assessment rule."""
+    """输入违反强制规则时抛出。 / Raised for a mandatory-rule violation."""
 
 
 def interval(value: Any, name: str, *, integers: bool = False) -> tuple[float, float]:
@@ -384,9 +390,17 @@ def assess(payload: dict[str, Any]) -> dict[str, Any]:
 
 def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("input", type=Path, help="Assessment JSON file")
-    parser.add_argument("--output", type=Path, help="Optional output JSON file")
-    parser.add_argument("--pretty", action="store_true", help="Pretty-print JSON")
+    parser.add_argument("input", type=Path, help="评估JSON文件 / Assessment JSON file")
+    parser.add_argument(
+        "--output",
+        type=Path,
+        help="可选输出JSON文件 / Optional output JSON file",
+    )
+    parser.add_argument(
+        "--pretty",
+        action="store_true",
+        help="格式化JSON / Pretty-print JSON",
+    )
     return parser.parse_args(argv)
 
 
@@ -406,6 +420,7 @@ def main(argv: Iterable[str] | None = None) -> int:
         sort_keys=args.pretty,
     )
     if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(text + "\n", encoding="utf-8")
     else:
         print(text)
@@ -414,4 +429,3 @@ def main(argv: Iterable[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

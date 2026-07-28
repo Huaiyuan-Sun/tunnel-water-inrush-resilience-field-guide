@@ -1,3 +1,3 @@
 evidence_id,incident_id,recorded_at,value,unit,source,source_time,status,owner,used_in,verification_state,notes
+证据编号 / Evidence ID,事件编号 / Incident ID,记录时间 / Recorded at,数值或描述 / Value,单位 / Unit,来源 / Source,来源时间 / Source time,状态 / Status,责任人 / Owner,用途 / Used in,核实状态 / Verification state,备注 / Notes
 E01,,,,,,,,,,Pending,
-

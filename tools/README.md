@@ -54,3 +54,55 @@ python -m unittest discover -s tests -v
 - 执行命令；
 - 人工复核和审批记录。
 
+## 输出解释
+
+- `validation.status` 只说明机器校验状态，不等于允许复工；
+- `dimension_level_range` 表示物理区间跨越的单维等级；
+- `resilience_level` 是云模型建议的综合Level I—IV；
+- `nearest_feature_point` 与第二近点距离差较小时，应标记边界敏感；
+- 警告必须进入最终报告，不得只保留在终端窗口。
+
+---
+
+<a id="english-version"></a>
+
+# Calculator
+
+`field_assessment.py` uses only the Python standard library. It supports net Stage A-D interval addition, 24-month model-input handling, integer and casualty-limit validation, Loss calculation, Time/Loss dimension levels, positive-integer CI weights, backward/forward two-dimensional cloud generation, and mean distance to all 25 Level I-IV feature points.
+
+Run:
+
+```bash
+python tools/field_assessment.py examples/example-assessment.json --pretty
+```
+
+Save output:
+
+```bash
+python tools/field_assessment.py examples/example-assessment.json \
+  --pretty --output output/example-result.json
+```
+
+Run tests:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+## Input contract
+
+- Every interval is `[lower, upper]`.
+- A-D are net stage durations after overlap treatment, in months.
+- LP values are persons and must have integer bounds.
+- LC values use CNY 10,000.
+- Environmental level is 1-5 and is mapped to LE by the tool.
+- Every evaluator supplies `time`, `loss`, and positive-integer `ci`.
+- Out-of-domain physical estimates must be handled under the guide and retained.
+
+## Reproducibility record
+
+Retain the input and output JSON, repository commit, Python version, seed, droplet count, command, and human review/approval.
+
+## Output interpretation
+
+`validation.status` is a machine-validation state, not restart authorization. `dimension_level_range` describes a physical interval across dimension levels, whereas `resilience_level` is the proposed integrated Level I-IV. A small margin between the nearest and second-nearest feature points requires boundary-sensitivity review. Copy every warning into the report.

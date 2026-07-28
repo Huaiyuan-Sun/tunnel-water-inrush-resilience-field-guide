@@ -1,6 +1,6 @@
 # 隧道施工突涌水灾害韧性评估现场实施指南
 
-[English summary](README_EN.md)
+[跳转到本文件英文版 / Jump to English](#english-version)
 
 本仓库将论文 *Intelligent resilience assessment of water inrush in tunnel construction based on mixture of experts-LLMs system* 及其两个配套开源项目，转化为施工现场可执行、可复核、可留痕的实施指南。
 
@@ -124,9 +124,122 @@ Loss = LP1 + LP2/3 + LP3/60
 
 任何 `Not assessable` 或未关闭的强制校验失败，都不得被包装成正式韧性等级。
 
+## 现场运行包
+
+建议每个项目在开工前建立一个可离线使用的“韧性评估运行包”，至少包括：
+
+- 已批准的岗位与CI名册；
+- 设备、泵排、运输、备件、供应商和外援能力清单；
+- 项目单价、净延误费率及经济损失归类规则；
+- 环境敏感受体、外排路径和许可条件；
+- 本仓库表单、计算脚本、测试结果和固定发布版本；
+- 两套演练情景及复盘记录；
+- 原始证据只读区、工作区、审批区和归档区。
+
+现场启动顺序固定为“安全—事实—区间—独立评估—校验—融合—行动—复评”。任何自动化输出必须保留人工审批，不得直接触发复工、撤人、救援或对外发布。
+
 ## 版本与引用
 
-当前版本：`v1.0.0`
+当前版本：`v1.1.0`
 
 引用信息见 [`CITATION.cff`](CITATION.cff)。本仓库采用 [MIT License](LICENSE)。
 
+---
+
+<a id="english-version"></a>
+
+# Field Implementation Guide for Tunnel Water-Inrush Resilience Assessment
+
+This repository translates the paper *Intelligent resilience assessment of water inrush in tunnel construction based on mixture of experts-LLMs system* and its two companion repositories into a field-ready, reviewable, and traceable operating system.
+
+It is intended for project managers, chief engineers, safety and emergency teams, cost engineers, environmental personnel, and assessment engineers. The package provides:
+
+- a safety-gated procedure from incident intake to resilience classification;
+- recovery-time and vulnerability assessment forms;
+- evidence, assumption, missing-data, and confidence controls;
+- confidence-index (CI) weighting and a reproducible two-dimensional cloud-model calculator;
+- action ownership, deadlines, acceptance evidence, reassessment, and closure;
+- an anonymized worked example and automated tests.
+
+> [!CAUTION]
+> This repository supports engineering decisions. It does not replace an emergency response plan, evacuation, rescue, monitoring, stop-work authority, statutory reporting, design verification, restart approval, or qualified professional judgment. Life safety and secondary-hazard control always take priority.
+
+## Fastest field use
+
+1. Open [`docs/quick-start.md`](docs/quick-start.md) and complete the safety gate.
+2. Copy the forms in [`templates/`](templates/) into a new incident folder.
+3. Assign `E01`, `E02`, and subsequent identifiers to every evidence item.
+4. Record each input as `Observed`, `Derived`, `Assumed`, or `Unknown`.
+5. Complete recovery-time and vulnerability assessments independently.
+6. Obtain at least two independent evaluator results using the same evidence snapshot.
+7. Run:
+
+   ```bash
+   python tools/field_assessment.py examples/example-assessment.json --pretty
+   ```
+
+8. Review warnings, boundary crossings, feature-point distances, and the proposed Level I-IV result.
+9. Approve actions in [`templates/final-report.md`](templates/final-report.md), assign owners, and define reassessment triggers.
+
+## Method summary
+
+Recovery time is:
+
+```text
+Time = TA + TB + TC + TD
+```
+
+where A covers emergency response and risk control, B covers drainage and mud/debris removal, C covers equipment and system recovery, and D covers restoration of construction conditions and restart approval. Parallel work must be handled through a dependency and overlap ledger.
+
+Vulnerability is:
+
+```text
+Loss = LP1 + LP2/3 + LP3/60
+     + (LC1 + LC2 + LC3 + LC4)/400 + LE
+```
+
+`LP1`, `LP2`, and `LP3` are fatalities, serious injuries, and minor injuries. `LC1`-`LC4` are mutually exclusive direct-loss categories in CNY 10,000. Environmental level is mapped to `LE = 0, 0.5, 1, 3, or 10`.
+
+| Dimension level | Time (months) | Loss |
+| --- | ---: | ---: |
+| 1 | `[0, 0.33)` | `[0, 1)` |
+| 2 | `[0.33, 1)` | `[1, 3)` |
+| 3 | `[1, 3)` | `[3, 10)` |
+| 4 | `[3, 9)` | `[10, 30)` |
+| 5 | `[9, 24]` | `[30, 100]` |
+
+Physical estimates outside the reference domain must be retained and explicitly flagged. They must not be silently forced into the model domain.
+
+## Repository map
+
+| Path | Purpose |
+| --- | --- |
+| [`docs/field-implementation-guide.md`](docs/field-implementation-guide.md) | Complete field implementation manual |
+| [`docs/quick-start.md`](docs/quick-start.md) | First 15 minutes, first hour, and first-day action card |
+| [`docs/deployment.md`](docs/deployment.md) | Project deployment, knowledge graph, offline mode, and governance |
+| [`docs/training-and-drills.md`](docs/training-and-drills.md) | Training, exercises, competency, and acceptance |
+| [`templates/`](templates/) | Bilingual operational forms and audit records |
+| [`examples/`](examples/) | An anonymized end-to-end example |
+| [`tools/field_assessment.py`](tools/field_assessment.py) | Validation, interval, CI, and cloud-model calculator |
+| [`tests/`](tests/) | Automated rule tests |
+
+## Required result states
+
+- `Assessable`: key inputs support a reviewable point or interval result.
+- `Provisional`: a bounded interim result is possible, but material evidence remains outstanding.
+- `Not assessable`: no defensible bound can be established for a controlling component.
+- `Suspended`: safety, data integrity, or authorization conditions prohibit continuation.
+
+An unresolved mandatory validation failure or `Not assessable` controlling component must never be presented as a formal resilience level.
+
+## Field operating package
+
+Before high-risk work starts, prepare an offline package containing the approved role and CI register, resource and supplier capacities, loss-accounting rules, environmental receptors and discharge constraints, this repository release, completed calculator tests, drill scenarios, and a controlled evidence/archive structure.
+
+The fixed operating sequence is **safety → facts → intervals → independent assessments → validation → fusion → actions → reassessment**. Automated results always require human approval.
+
+## Version and citation
+
+Current version: `v1.1.0`
+
+Citation metadata is provided in [`CITATION.cff`](CITATION.cff). The repository is released under the [MIT License](LICENSE).

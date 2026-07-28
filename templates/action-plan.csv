@@ -1,2 +1,3 @@
 action_id,incident_id,resilience_level,dominant_weakness,trigger,measure,owner,due_date,required_resource,acceptance_evidence,status,residual_risk,reassessment_required,closed_at,approved_by
+行动编号 / Action ID,事件编号 / Incident ID,韧性等级 / Resilience level,主导薄弱项 / Dominant weakness,触发条件 / Trigger,措施 / Measure,责任人 / Owner,期限 / Due date,所需资源 / Required resource,验收证据 / Acceptance evidence,状态 / Status,残余风险 / Residual risk,是否复评 / Reassessment required,关闭时间 / Closed at,批准人 / Approved by
 ,,,,,,,,,,Open,,Yes,,

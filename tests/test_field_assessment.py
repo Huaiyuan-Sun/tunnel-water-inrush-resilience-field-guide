@@ -1,6 +1,9 @@
+"""现场计算器规则回归测试。 / Regression tests for field-calculator rules."""
+
 import importlib.util
 import json
 import pathlib
+import tempfile
 import unittest
 
 
@@ -57,6 +60,25 @@ class FieldAssessmentTests(unittest.TestCase):
         }
         with self.assertRaises(MODULE.AssessmentInputError):
             MODULE.assess_vulnerability(bad)
+
+    def test_cli_creates_output_directory(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output = pathlib.Path(temp_dir) / "nested" / "result.json"
+            status = MODULE.main(
+                [
+                    str(ROOT / "examples" / "example-assessment.json"),
+                    "--output",
+                    str(output),
+                ]
+            )
+            self.assertEqual(status, 0)
+            self.assertTrue(output.exists())
+            self.assertEqual(
+                json.loads(output.read_text(encoding="utf-8"))["cloud_model"][
+                    "resilience_level"
+                ],
+                "II",
+            )
 
 
 if __name__ == "__main__":

@@ -65,3 +65,72 @@
 
 对规则、CI或边界的修改应在演练后批准，不得无记录地直接进入生产使用。
 
+## 7. 资格保持
+
+- 新任岗位人员上岗前完成一次带教演练；
+- 核心评估人员每年至少参加一次桌面推演；
+- 脚本、规则或表单发生重大变更后执行专项再培训；
+- 连续两次在单位、去重、人员上限或安全门上出错者暂停独立评估资格；
+- 恢复资格需完成纠正培训、盲评案例和负责人签认。
+
+## 8. 演练评分
+
+建议总分100分：安全门20分、证据与版本20分、恢复时间15分、脆弱性15分、独立评估与云模型10分、行动闭环10分、交接与报告10分。安全门或伤亡上限校验失败为一票否决。
+
+---
+
+<a id="english-version"></a>
+
+# Training and Exercises
+
+## 1. Audience
+
+Train incident command and safety personnel; construction, geology, hydrogeology, MEP, and survey staff; cost, procurement, and contract personnel; environmental staff; and the LLM/system and assessment owners.
+
+## 2. Minimum curriculum
+
+| Module | Content | Suggested time |
+| --- | --- | ---: |
+| Safety boundary | Safety gate, suspension, escalation | 30 min |
+| Evidence discipline | Observed/Derived/Assumed/Unknown and versions | 45 min |
+| Recovery time | Stages A-D, drainage feasibility, critical path | 60 min |
+| Vulnerability | LP constraints, LC non-duplication, LE mapping | 60 min |
+| Graph and cases | Retrieval and rule/fact separation | 30 min |
+| CI and cloud model | Weights, seed, feature points, level | 45 min |
+| Action closure | Owner, deadline, evidence, reassessment | 30 min |
+
+## 3. Tabletop exercise
+
+Release the scenario in three injects:
+
+1. **T0:** sudden inflow, lost communications, incomplete personnel status;
+2. **T+2 h:** continuing inflow, pump capacity, collapse extent, personnel confirmation;
+3. **T+8 h:** equipment inspection, quotations, environmental discharge, and restart constraints.
+
+Participants create a new version after each inject and must not overwrite earlier conclusions.
+
+## 4. Blind consistency
+
+At least two evaluators use the same frozen evidence snapshot independently. Review unit and boundary consistency, restraint with unknowns, overlap and loss-accounting treatment, traceability of disagreements, distinction between CI and confidence, and preservation of pre-consensus outputs.
+
+## 5. Competency criteria
+
+- 100% pass on casualty limits, units, LE mapping, stage arithmetic, and double-count checks;
+- every number traces to evidence or a bounded assumption;
+- no case is represented as a field fact;
+- an initial interval is formed within 60 minutes;
+- a provisional integrated assessment is completed within a four-hour exercise window;
+- major failures trigger suspension or escalation;
+- reports and actions contain versions, owners, deadlines, and acceptance evidence.
+
+## 6. After-action review
+
+Record the latest-arriving critical inputs, assumption-sensitive components, outdated resource/rate lists, failed graph queries, difficult form fields, evaluator disagreements, and required training/interface changes. Changes to rules, CI, or boundaries require post-exercise approval before production use.
+
+## 7. Maintaining authorization
+
+New role holders complete a supervised exercise before authorization. Core assessors participate at least annually and after material changes. Two consecutive errors in safety gates, units, double counting, or casualty limits suspend independent-assessor status until corrective training, a blind case, and approval are complete.
+
+## 8. Scoring
+
+Suggested total: safety gate 20, evidence/versioning 20, recovery 15, vulnerability 15, independent assessment/cloud model 10, action closure 10, and handover/reporting 10. A safety-gate or casualty-limit failure is an automatic fail.

@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-title: "Field Implementation Guide for Tunnel Water-Inrush Resilience Assessment"
-message: "If you use this field guide, please cite this repository and the related paper."
+title: "隧道施工突涌水灾害韧性评估现场实施指南 / Field Implementation Guide for Tunnel Water-Inrush Resilience Assessment"
+message: "如使用本指南，请引用本仓库及相关论文。 / If you use this field guide, please cite this repository and the related paper."
 type: software
 authors:
   - family-names: Sun
     given-names: Huaiyuan
 repository-code: "https://github.com/Huaiyuan-Sun/tunnel-water-inrush-resilience-field-guide"
-abstract: "An operational field guide, reusable forms, and reproducible calculation tools for knowledge-grounded resilience assessment of tunnel construction water-inrush disasters."
+abstract: "面向隧道施工突涌水灾害韧性评估的现场实施指南、可复用双语表单及可复现计算工具。 / An operational field guide, reusable bilingual forms, and reproducible calculation tools for knowledge-grounded resilience assessment of tunnel construction water-inrush disasters."
 keywords:
   - tunnel construction
   - water inrush
@@ -16,6 +16,5 @@ keywords:
   - knowledge graph
   - cloud model
 license: MIT
-version: 1.0.0
+version: 1.1.0
 date-released: 2026-07-28
-

@@ -412,3 +412,324 @@ Acceptance evidence | Status | Residual risk | Reassessment required
 
 文件名应包含事件编号、版本、时间和责任人。脚本输出应保存运行命令、代码提交号、随机种子和云滴数。
 
+## 8. 现场决策节奏与交接
+
+| 时间窗 | 必须形成的输出 | 责任岗位 | 允许状态 |
+| --- | --- | --- | --- |
+| T+0—15 min | 安全门、事件编号、首批事实、信息缺口 | 现场指挥人/安全负责人 | `Suspended` 或启动 |
+| T+15—60 min | 证据台账、初始上下界、待核实清单 | 数据记录员/两类评估人 | `Provisional` |
+| T+1—4 h | 独立评估、强制校验、首版行动计划 | 评估负责人 | `Provisional/Assessable` |
+| T+4—8 h | 设备拆检、报价、环境及关键路径更新 | 专业负责人 | 新版本 |
+| T+8—24 h | 正式复核、CI融合、云模型和审批 | 总工/评估负责人 | 批准版本 |
+| 每日及重大变化后 | 措施状态、残余风险和复评 | 行动责任人 | 更新/关闭/升级 |
+
+换班或指挥权移交时，交出方必须逐项说明安全门状态、控制性假设、未关闭校验、最近证据版本、主导关键路径、当前综合等级、待办行动和下一复评触发条件。接收方复诵确认并签署，不得只移交最终等级。
+
+## 9. 现场数据质量分级
+
+| 数据质量 | 最低依据 | 使用限制 |
+| --- | --- | --- |
+| A | 校准仪器、正式记录或两类独立来源一致 | 可用于正式上下界 |
+| B | 单一可靠来源，时间和单位完整 | 可用于临时评估，需后续核验 |
+| C | 有责任人的工程假设，给出物理或合同边界 | 只能形成 `Provisional` 结果 |
+| D | 来源、单位、时间或对象不明 | 记为 `Unknown`，不得形成点值 |
+
+同一数值存在冲突时，不得平均后消除冲突。应保留全部记录，优先核查量测位置、时间窗口、仪器状态、口径和单位，并以区间或多情景表示尚未解决的差异。
+
+## 10. 敏感性与情景复核
+
+正式签发前至少执行以下三项检查：
+
+1. **边界检查**：分别用全部下界和全部上界运行，确认等级范围；
+2. **主导项检查**：逐项缩小主要不确定区间，识别最值得补充的证据；
+3. **反事实检查**：测试泵失效、持续流量上升、运输中断、设备需更换、环境等级升高或审批延迟等合理不利情景。
+
+如果单个合理假设即可使综合等级跨越一级，标记 `boundary_sensitive=true`，措施应同时覆盖相邻两级要求。若跨越两级及以上，暂停自动签发并组织专项会商。
+
+## 11. 行动优先级与最低响应
+
+行动优先级由生命安全、次生灾害、关键路径、损失贡献和可实施性共同确定，不得只按综合等级机械排序。
+
+| 优先级 | 典型条件 | 最低响应 |
+| --- | --- | --- |
+| P0 | 人员风险或灾害仍在发展 | 立即启动现场指挥和应急体系，暂停本指南定量流程 |
+| P1 | 控制持续涌水、坍塌、通风供电或关键排水能力 | 当班明确责任人、资源和完成判据 |
+| P2 | 控制恢复关键路径或主要损失贡献 | 24小时内形成批准计划 |
+| P3 | 提升冗余、监测、备件、培训和长期韧性 | 纳入整改闭环和复评 |
+
+每项措施必须具备可验证的完成定义。例如，“增加排水能力”应写明新增流量、扬程、供电、管路、安装位置、到场时间、试运行要求和验收记录。
+
+## 12. 运行绩效指标
+
+项目可按月或按演练统计以下指标：
+
+- 首批事实登记完成时间；
+- 关键证据具有来源、单位和时间戳的比例；
+- `Assumed/Unknown` 输入比例及关闭时长；
+- 强制校验一次通过率；
+- 独立评估差异及会商原因；
+- 结果发布前的人工审批覆盖率；
+- 行动按期完成率和验收证据完整率；
+- 新证据触发新版本的及时率；
+- 演练中完成第一版临时评估所需时间；
+- 复评后等级、区间宽度和主导项的变化。
+
+绩效指标用于改进流程，不得用于压缩安全确认时间或鼓励无依据的精确估计。
+
+---
+
+<a id="english-version"></a>
+
+# Field Implementation Guide for Tunnel Water-Inrush Resilience Assessment
+
+## 1. Purpose, scope, and outputs
+
+This guide converts heterogeneous, incomplete, and changing field information into reviewable recovery-time and vulnerability intervals, an integrated resilience level, and accountable improvement actions. It applies to tunnel-construction water inrush, including events accompanied by mud, collapse, equipment inundation, or environmental discharge. It may also be used for pre-incident exercises.
+
+Required outputs are:
+
+1. an evidence and missing-information register;
+2. recovery-time interval, representative value, and dimension level;
+3. vulnerability interval, representative value, and dimension level;
+4. independent evaluator results and approved CI values;
+5. six cloud parameters, 25 feature-point distances, and a Level I-IV result;
+6. actions linked to dominant weaknesses, owners, deadlines, and acceptance evidence;
+7. assessment versions, approvals, reassessments, and closure records.
+
+### 1.1 Limits of use
+
+- The method evaluates post-event recoverability and consequence severity; it does not predict event probability.
+- Larger recovery-time values indicate weaker recoverability.
+- Dimension Levels 1-5 and integrated Levels I-IV are different outputs.
+- The result supports resource allocation and recovery decisions, but does not determine legal liability, design adequacy, or restart authorization.
+
+## 2. Organization and responsibilities
+
+| Role | Minimum responsibility | Independence or restriction |
+| --- | --- | --- |
+| Incident commander | Safety gate, priorities, external release | Must not be replaced by automation |
+| Safety/rescue lead | Evacuation, rescue, access, secondary hazards | Holds stop authority |
+| Data recorder | Incident ID, evidence IDs, timestamps, version archive | Must preserve original evidence |
+| Recovery assessor | Stages A-D, dependencies, critical path | Independent from loss back-calculation |
+| Vulnerability assessor | LP, LC, LE, and double-count prevention | Must not infer components from a target total |
+| Cost/equipment specialist | Quantities, rates, repair/replacement, delay rate | Must state price date and basis |
+| Environmental specialist | Discharge path, receptor, extent, LE interval | Uses an interval when evidence is incomplete |
+| Independent evaluator | Time and Loss from the same evidence snapshot | Must not see other conclusions first |
+| Assessment lead | Validation, CI, cloud model, approval, escalation | Owns unresolved validation failures |
+
+Formal deployment should include tunnel/underground engineering, safety, cost or equipment, and environmental competence. An LLM may be one assessment unit, never the incident commander or sole approving authority.
+
+## 3. Pre-deployment readiness
+
+Before high-risk work:
+
+1. establish an incident folder structure and read-only original-evidence area;
+2. deploy the companion knowledge graph only to a blank or dedicated database;
+3. approve time, loss, and environmental interpretation rules;
+4. approve evaluators and positive-integer CI values before an incident;
+5. maintain pump, power, transport, spare, supplier, external-support, and approval lead-time lists;
+6. map discharge routes, permits, and sensitive receptors;
+7. complete a tabletop exercise and blind consistency test;
+8. prove the forms and calculator work offline.
+
+CI is an approved task-specific weight. It must be based on historical cases, rule compliance, domain competence, and repeatability. Any incident-time change requires the old value, reason, approver, and effective version to remain auditable.
+
+## 4. End-to-end operating procedure
+
+### Step 0: safety gate
+
+If evacuation, rescue, access, structural stability, ventilation, power isolation, or secondary-hazard control is not confirmed, set the assessment to `Suspended`. Never expose personnel merely to obtain a numerical input.
+
+### Step 1: evidence and missing-data control
+
+Each input record must contain:
+
+```text
+Evidence ID | Value | Unit | Source | Source time | Status | Owner | Used in
+```
+
+Allowed statuses are `Observed`, `Derived`, `Assumed`, and `Unknown`. Photographs, sensor records, interviews, estimates, and model outputs remain separate traceable records.
+
+Minimum input groups cover project geometry and access; geology and hydrogeology; event timing, inflow and mud; personnel; power, ventilation, communications, drainage, support and monitoring; available resources; restart requirements; cost quantities; and environmental pathways.
+
+When a critical value is missing, first establish a defensible physical, contractual, equipment, or case-bounded interval. If no defensible bound exists, record `Unknown` or `Not assessable`; do not invent a point estimate.
+
+### Step 2: knowledge retrieval
+
+Query the companion knowledge graph for vulnerability indicators, recovery stages, assessment rules, comparable cases, and candidate strategy levels. Save the query, returned node/property, purpose, and any adjustment.
+
+Rules constrain calculations; cases calibrate or bound intervals. Neither proves a field fact. A case-based adjustment must state similarities, differences, direction, and magnitude.
+
+### Step 3: recovery-time assessment
+
+- **Stage A:** emergency response, evacuation interface, access control, temporary stabilization, and secondary-hazard control.
+- **Stage B:** drainage, mud/debris removal, loading, transport, treatment, and disposal.
+- **Stage C:** inspection, repair/replacement, commissioning, and integrated testing of critical systems.
+- **Stage D:** ground treatment, waterproofing or drainage modification, method changes, monitoring verification, approvals, workforce/equipment reorganization, and restart acceptance.
+
+When data support it:
+
+```text
+Q_eff = Q_installed × availability × operating_efficiency
+Q_net = Q_eff - q_in
+T_water_hours = V_water / Q_net
+```
+
+If `Q_net <= 0`, completion cannot be claimed under the current resources. Add a bounded resource scenario or return `Not assessable`.
+
+Record every activity's gross duration, predecessor, parallel work, overlap treatment, and net stage contribution. Prefer a critical-path schedule. The auditable interval is:
+
+```text
+Time_low  = TA_net_low  + TB_net_low  + TC_net_low  + TD_net_low
+Time_high = TA_net_high + TB_net_high + TC_net_high + TD_net_high
+```
+
+Use 30 days or 720 hours per month unless the project approves another conversion. Do not round intermediate values.
+
+| Time (months) | Dimension level |
+| ---: | ---: |
+| `[0, 0.33)` | 1 |
+| `[0.33, 1)` | 2 |
+| `[1, 3)` | 3 |
+| `[3, 9)` | 4 |
+| `[9, 24]` | 5 |
+
+Report a `level_range` when an interval crosses a boundary. The confidence may not be `High` in that case.
+
+### Step 4: vulnerability assessment
+
+Personnel components are mutually exclusive non-negative integer counts:
+
+```text
+LP1 + LP2 + LP3 <= N_affected
+```
+
+Use officially confirmed casualties where available. Do not overwrite them with model estimates.
+
+Assign each cost once:
+
+- `LC1`: drainage, mud removal, transport, treatment, and disposal;
+- `LC2`: equipment cleaning, inspection, repair, or replacement net of recoverable value;
+- `LC3`: damaged materials, support, services, and completed works;
+- `LC4`: net schedule-delay duration multiplied by an eligible net daily delay rate.
+
+All LC values use CNY 10,000. Remove labor, standby equipment, management, or contractual amounts already captured in LC1-LC3 from LC4.
+
+Environmental consequence levels map as follows:
+
+| Level | Operational consequence | LE |
+| ---: | --- | ---: |
+| 1 | Controlled; no material ecological disturbance | 0 |
+| 2 | Minor, localized, short-term disturbance | 0.5 |
+| 3 | Limited pollution or ecological harm outside the work area | 1 |
+| 4 | Significant or wide impact, or a sensitive receptor involved | 3 |
+| 5 | Extensive, severe, or long-duration ecological harm | 10 |
+
+Calculate:
+
+```text
+Loss = LP1 + LP2/3 + LP3/60
+     + (LC1 + LC2 + LC3 + LC4)/400 + LE
+```
+
+| Loss | Dimension level |
+| ---: | ---: |
+| `[0, 1)` | 1 |
+| `[1, 3)` | 2 |
+| `[3, 10)` | 3 |
+| `[10, 30)` | 4 |
+| `[30, 100]` | 5 |
+
+If `Loss > 100`, preserve the physical estimate and set `outside_reference_domain=true`; do not silently cap it.
+
+### Step 5: intervals and confidence
+
+Use closed `[lower, upper]` intervals for incomplete information. Each endpoint must describe an internally consistent scenario. The default representative value is the midpoint and is used only for CI fusion and the cloud model; original intervals remain in the audit record.
+
+`High` requires observed or reliable derived controlling inputs. `Medium` permits bounded assumptions when the level is stable. `Low` applies when assumptions control the result, several key inputs are missing, or the interval crosses a level. `Not assessable` applies when no defensible bound exists.
+
+### Step 6: independent assessments and CI
+
+Every evaluator receives the same frozen evidence version and independently reports Time and Loss intervals, representative values, assumptions, validations, confidence, and CI. Preserve pre-consensus results.
+
+Convene a review when evaluator ranges differ by more than two adjacent dimension bands, evidence versions conflict, controlling assumptions conflict, mandatory validation fails, or the highest-CI evaluator returns `Low`/`Not assessable`.
+
+### Step 7: two-dimensional cloud model
+
+Use each evaluator's representative `(Time, Loss)` and positive-integer CI. The weighted backward generator estimates `Ex`, `Ey`, `Enx`, `Eny`, `Hex`, and `Hey`; the forward generator then produces `(x, y, membership)` droplets with a recorded seed and droplet count.
+
+The 25 feature points are the midpoints of the five Time and five Loss intervals at membership 1. Their integrated bands contain 3 Level I, 7 Level II, 9 Level III, and 6 Level IV points. The feature point with the minimum mean 3D Euclidean droplet distance determines the proposed level.
+
+Retain all 25 distances, the nearest and second-nearest points, their margin, all cloud parameters, the seed, droplet count, evaluator inputs, CI values, evidence version, and code commit. Closely spaced first/second distances, cross-level input intervals, or extensive droplets outside the reference domain require a `boundary_sensitive` review.
+
+### Step 8: actions and closure
+
+Match the integrated level first, then refine actions using the controlling recovery stage and largest loss contribution. Each action contains:
+
+```text
+Action ID | Trigger | Measure | Owner | Due date | Resource
+Acceptance evidence | Status | Residual risk | Reassessment required
+```
+
+Do not accept non-verifiable statements such as “strengthen management.” Specify capacity, location, resources, completion criteria, and evidence.
+
+### Step 9: approval, reassessment, and closure
+
+At minimum, the recovery assessor, vulnerability assessor, independent reviewer, and assessment lead sign the report. New inflow data, casualty confirmation, equipment inspection, prices, critical-path changes, environmental evidence, or action completion creates a new version rather than overwriting the old one.
+
+Closure requires resolved validations or an approved deviation, completed or controlled actions, a signed reassessment, a complete audit package, and anonymized lessons captured or formally excluded.
+
+## 5. Mandatory validations
+
+Confirm stage access logic, drainage feasibility, critical-path and overlap arithmetic, casualty upper bounds, integer LP values, LC units and non-duplication, LC4 net rates, LE mapping, interval ordering, representative values, domain exceedance flags, fixed seed and droplet count, all 25 distances, and human approval.
+
+Any unresolved mandatory validation must be visible on the first page of the report.
+
+## 6. Stop and escalation conditions
+
+Suspend automated release when the safety gate fails; secondary hazards intensify; field facts conflict; a controlling component is `Not assessable`; casualty, unit, overlap, or arithmetic validation fails; Time or Loss materially exceeds the model domain; the result controls major resources, restart, or public release; expert and model levels differ by two or more bands; or unauthorized personal/commercial data is present.
+
+## 7. Minimum audit package
+
+```text
+01_event_intake/
+02_original_evidence_readonly/
+03_evidence_register/
+04_kg_retrieval/
+05_independent_assessments/
+06_calculation_input_output/
+07_review_and_approval/
+08_action_and_acceptance/
+09_reassessment_and_closure/
+```
+
+File names include the incident ID, version, time, and owner. Calculator records include the command, code commit, Python version, seed, and droplet count.
+
+## 8. Decision cadence and handover
+
+Within 15 minutes, establish the safety gate and initial facts. Within one hour, bound missing data and controlling components. Within four hours, produce independent provisional assessments and actions. By 24 hours, complete formal review where conditions permit. Update daily and after any material change.
+
+At shift or command handover, communicate the safety status, controlling assumptions, unresolved validations, latest evidence version, critical path, current level, open actions, and next reassessment trigger. The receiving person repeats and signs the handover.
+
+## 9. Data-quality grades
+
+Grade A data come from calibrated instruments, formal records, or consistent independent sources. Grade B data come from one reliable source with complete units and time. Grade C is a bounded, owned engineering assumption and supports only a provisional result. Grade D lacks source, unit, time, or object and remains `Unknown`.
+
+Conflicting values must remain traceable. Do not average away a disagreement before checking location, time window, instrument condition, definition, and units.
+
+## 10. Sensitivity and scenario review
+
+Run full lower- and upper-bound cases, identify which uncertainty most changes the output, and test credible adverse scenarios such as pump failure, inflow escalation, transport interruption, equipment replacement, environmental escalation, or approval delay.
+
+If one credible assumption moves the integrated result by one level, set `boundary_sensitive=true` and cover both adjacent action bands. A two-level movement requires escalation.
+
+## 11. Action priority
+
+- `P0`: active life-safety or developing-hazard condition; transfer control to the emergency command system.
+- `P1`: controls inflow, collapse, ventilation, power, or critical drainage; assign owner, resources, and acceptance criteria in the current shift.
+- `P2`: controls the recovery critical path or major loss contribution; approve a plan within 24 hours.
+- `P3`: long-term redundancy, monitoring, spares, training, and resilience improvement.
+
+## 12. Performance indicators
+
+Track time to first facts, evidence completeness, assumption/unknown closure time, first-pass validation rate, evaluator dispersion, human approval coverage, action completion and evidence quality, version-update timeliness, time to provisional assessment, and change in level/interval width after reassessment. These metrics improve the process; they must never incentivize bypassing safety confirmation or fabricating precision.

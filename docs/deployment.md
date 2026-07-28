@@ -107,3 +107,100 @@ CI建议分为三级，但具体正整数由项目批准：
 - [ ] 数据权限和备份通过检查；
 - [ ] 发布版本号和责任人已登记。
 
+## 9. 变更、回退与年度复核
+
+- 规则、阈值、CI、脚本或表单变更均通过版本化审批；
+- 变更前后使用同一组基准案例回归测试，并记录等级与距离变化；
+- 生产现场仅使用带标签的批准版本，禁止直接使用开发分支；
+- 保留上一批准版本及其运行环境，确保能够回退；
+- 每年至少复核一次设备能力、费用基准、环境清单、人员名册和法规适配；
+- 真实事件后只更新匿名经验，不把敏感原始资料写入开源仓库。
+
+推荐成熟度：
+
+| 级别 | 能力 |
+| --- | --- |
+| M0 | 只有纸面流程，尚未演练 |
+| M1 | 表单和脚本可离线运行 |
+| M2 | 图谱、独立评估、审批和归档贯通 |
+| M3 | 定期演练、指标监控、回归测试和持续改进 |
+
+---
+
+<a id="english-version"></a>
+
+# Project Deployment Guide
+
+## 1. Deployment profiles
+
+The minimum offline configuration is one Python 3.9+ workstation, a read-only release of this repository, local form copies, an approved CI register, and current resource/rate/approval lead-time lists.
+
+A standard deployment adds a Neo4j knowledge graph, a controlled document platform, two or more independent expert/LLM assessment units, versioned storage, automated validation, and an approval workflow.
+
+## 2. Knowledge graph
+
+Use [tunnel-water-mud-inrush-resilience-kg](https://github.com/Huaiyuan-Sun/tunnel-water-mud-inrush-resilience-kg).
+
+> The Cypher package contains database-clearing commands. Import it only into a blank or dedicated database, never into a database containing production data.
+
+After deployment, verify that vulnerability indicators, four recovery stages, rules, matrix relations, anonymized cases, and strategy levels are retrievable. Log each query, node/property returned, and intended use.
+
+## 3. Assessment workflows
+
+Use [tunnel-resilience-assessment-workflows](https://github.com/Huaiyuan-Sun/tunnel-resilience-assessment-workflows) as task protocols. Do not request unrestricted private reasoning. Retain only evidence and gaps, structured stage/component outputs, bounded assumptions and engineering rationale, intervals and confidence, validations, and fixed machine-readable fields.
+
+## 4. CI register
+
+Approve positive-integer CI values before an incident. Determine them from historical blind cases, task fit, rule compliance, domain competence, and repeatability rather than model brand or job title. Preserve the basis, approver, effective version, and last validation case.
+
+## 5. Project calibration
+
+Review whether reference boundaries remain suitable for long tunnels, large sections, single access, constrained transport, high-value equipment, urban or sensitive environmental settings, contractual milestones, and restart requirements.
+
+Any project correction factor requires a pre-incident approval document with scope, basis, version, and rollback rule. Never change a threshold during an incident merely to change the outcome.
+
+## 6. Offline and degraded operation
+
+When network or graph access is unavailable:
+
+1. use the fixed repository rules and local forms;
+2. record `knowledge_retrieval=unavailable`;
+3. do not claim graph validation;
+4. increase qualified human review;
+5. add retrieval later as a new assessment version.
+
+The calculator uses only the Python standard library.
+
+## 7. Data and security
+
+- Keep original evidence read-only.
+- Minimize personal information.
+- Do not send full incident reports, photographs, coordinates, or contract data to an external LLM without authorization.
+- Anonymize all open-source examples.
+- Preserve prompt/workflow version, evaluator identity, CI, output, approval, and access logs.
+- Test backup restoration, not only backup creation.
+
+## 8. Go-live acceptance
+
+- [ ] Rules and thresholds approved by the chief engineer and safety lead.
+- [ ] Knowledge-graph queries passed.
+- [ ] Calculator tests passed.
+- [ ] CI register approved.
+- [ ] Core forms work offline.
+- [ ] One tabletop exercise completed.
+- [ ] Blind-evaluator disagreement and escalation exercised.
+- [ ] Access control and backup restoration passed.
+- [ ] Release version and accountable owner recorded.
+
+## 9. Change, rollback, and annual review
+
+Version and approve every change to rules, thresholds, CI, scripts, or forms. Run the same reference cases before and after the change, recording any level or distance changes. Production uses only tagged approved releases; retain the previous approved release and runtime for rollback.
+
+Review resource capacities, rates, environmental receptors, role registers, and regulatory fit at least annually. After a real incident, transfer only anonymized lessons to the open repository.
+
+| Maturity | Capability |
+| --- | --- |
+| M0 | Written procedure only; not exercised |
+| M1 | Forms and calculator run offline |
+| M2 | Graph, independent assessment, approval, and archive are integrated |
+| M3 | Regular exercises, metrics, regression tests, and continual improvement |
