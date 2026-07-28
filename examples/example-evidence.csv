@@ -1,0 +1,8 @@
+evidence_id,incident_id,recorded_at,value,unit,source,source_time,status,owner,used_in,verification_state,notes
+E01,DEMO-K12+340-20260728-01,2026-07-28T09:10:00+08:00,12,persons,shift roster,2026-07-28T08:00:00+08:00,Observed,Data recorder,LP,Verified,All 12 workers accounted for
+E02,DEMO-K12+340-20260728-01,2026-07-28T09:20:00+08:00,420,m3/h,flow monitoring,2026-07-28T09:15:00+08:00,Observed,Hydrology engineer,B,Verified,Continuing inflow
+E03,DEMO-K12+340-20260728-01,2026-07-28T09:25:00+08:00,760,m3/h,pump inventory and test,2026-07-28T09:20:00+08:00,Derived,MEP engineer,B,Verified,Effective capacity after availability and efficiency
+E04,DEMO-K12+340-20260728-01,2026-07-28T10:00:00+08:00,"2500-3100",m3,survey estimate,2026-07-28T09:50:00+08:00,Derived,Survey engineer,B,Pending,Bounded accumulated-water estimate
+E05,DEMO-K12+340-20260728-01,2026-07-28T11:00:00+08:00,"45-60",days,grouting and verification plan,2026-07-28T10:40:00+08:00,Assumed,Chief engineer,D,Pending,Controls restoration interval
+E06,DEMO-K12+340-20260728-01,2026-07-28T11:15:00+08:00,2-3,level,environment walkdown,2026-07-28T11:00:00+08:00,Assumed,Environmental engineer,LE,Pending,Discharge receptor verification pending
+
